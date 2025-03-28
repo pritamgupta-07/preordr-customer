@@ -1,10 +1,11 @@
+"use client"
 import { useState, useCallback } from "react";
 
 const Switch = ({
   onLabel = "",
   offLabel = "",
-  onColor = "bg-green-500",
-  offColor = "bg-gray-300",
+  onColor = "bg-[var(--color-secondary-500)]",
+  offColor = "bg-[var(--color-surface-600)]",
   thumbColor = "bg-white",
   width = "w-22",
   height = "h-8",

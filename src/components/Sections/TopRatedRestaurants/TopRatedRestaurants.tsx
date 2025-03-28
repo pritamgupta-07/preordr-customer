@@ -1,3 +1,4 @@
+import FoodType from "@/components/tags/FoodType";
 import Image from "next/image";
 import { useRef } from "react";
 
@@ -25,7 +26,7 @@ const TopRatedRestaurants = () => {
         <div className="flex space-x-4">
           <button
             onClick={scrollLeft}
-            className="p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors"
+            className="p-2 rounded-full bg-[var(--color-surface-500)] hover:bg-gray-600 transition-colors"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +46,7 @@ const TopRatedRestaurants = () => {
           </button>
           <button
             onClick={scrollRight}
-            className="p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors"
+            className="p-2 rounded-full bg-[var(--color-surface-500)] hover:bg-gray-600 transition-colors"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -72,7 +73,7 @@ const TopRatedRestaurants = () => {
         {[...Array(6)].map((_, index) => (
           <div
             key={index}
-            className="flex-shrink-0 w-80 bg-white rounded-lg shadow-md overflow-hidden snap-center"
+            className="flex-shrink-0 w-80 bg-[var(--color-surface-500)] rounded-lg shadow-md overflow-hidden snap-center"
           >
             <div className="relative">
               <span className="absolute top-2 right-2 bg-[var(--color-secondary-500)] rounded-full px-3 py-1 text-sm font-semibold text-white flex items-center">
@@ -100,27 +101,12 @@ const TopRatedRestaurants = () => {
                 className="w-full h-52 object-cover"
               />
             </div>
-            <div className="p-4">
-              <p className="text-xl font-semibold text-gray-800">
+            <div className="p-4 flex justify-between items-center">
+              <p className="text-xl font-semibold text-[var(--color-text-primary-800)]">
                 Name of the Restaurant
               </p>
-              <div className="flex items-center mt-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="green"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="lucide lucide-square-dot"
-                >
-                  <rect width="18" height="18" x="3" y="3" rx="2" />
-                  <circle cx="12" cy="12" r="4" fill="green" stroke="green" />
-                </svg>
-                <span className="ml-2 text-sm text-gray-600">Veg</span>
+              <div>
+                <FoodType type="veg"/>            
               </div>
             </div>
           </div>

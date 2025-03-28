@@ -41,7 +41,7 @@ const Navbar = () => {
           <input
             type="text"
             placeholder="Search"
-            className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-500)] focus:border-[var(--color-primary-300)]"
+            className="px-3 py-2 text-[var(--color-text-primary-500)] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-500)] focus:border-[var(--color-primary-300)]"
           />
         </span>
 
@@ -100,7 +100,7 @@ const Navbar = () => {
 
         {/* CTA Button */}
         <Link
-          href="/"
+          href="/search"
           className="px-4 py-2 bg-[var(--color-primary-500)] text-[var(--color-text-primary-50)] rounded-lg hover:bg-[var(--color-primary-600)] transition-colors"
         >
           Sign In

@@ -214,6 +214,11 @@
   --color-gradient-200: rgba(255, 255, 255, 0.2);
 }
 
+::selection {
+  background-color: var(--color-primary-500);
+  color: var(--color-text-secondary-600);
+}
+
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
