@@ -22,7 +22,7 @@ const Switch = ({
       role="switch"
       aria-checked={isOn}
       tabIndex={0}
-      className={`${width} ${height} flex items-center rounded-full p-1 cursor-pointer transition-all duration-300 relative ${
+      className={`${width} ${height} flex items-center flex-nowrap rounded-full p-1 cursor-pointer transition-all duration-300 relative ${
         isOn ? onColor : offColor
       }`}
       onClick={toggleSwitch}
@@ -34,14 +34,14 @@ const Switch = ({
     >
       {/* Text with opacity effect */}
       <span
-        className={`absolute w-full text-center text-xs font-semibold transition-all duration-300 p-3 ${
+        className={`absolute w-full text-center text-xs font-semibold transition-all duration-300 p-3 select-none ${
           isOn ? "opacity-0 text-[11px] text-right" : "opacity-100 text-right"
         }`}
       >
         {offLabel}
       </span>
       <span
-        className={`absolute w-full text-xs font-semibold transition-all duration-300 ${
+        className={`absolute w-full text-xs font-semibold transition-all duration-300 select-none ${
           isOn ? "opacity-100 text-left ml-2" : "opacity-0"
         }`}
       >

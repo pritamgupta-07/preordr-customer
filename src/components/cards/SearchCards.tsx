@@ -4,9 +4,9 @@ import FoodType from "../tags/FoodType";
 
 const SearchCards = () => {
   return (
-    <div className="flex flex-col sm:flex-row gap-4 p-4 bg-[var(--color-surface-300)] rounded-lg border border-[var(--color-surface-500)] hover:border-[var(--color-surface-600)] transition-all">
+    <div className="flex flex-row gap-4 p-4 bg-[var(--color-surface-300)] rounded-lg border border-[var(--color-surface-500)] hover:border-[var(--color-surface-600)] transition-all">
       {/* Image - Always square */}
-      <div className="w-full sm:w-32 h-32 flex-shrink-0">
+      <div className="w-32 h-32 flex-shrink-0">
         <Image
           src="https://placehold.co/300x300/F3F4F6/D1D5DB/png"
           className="object-cover w-full h-full rounded-lg"
@@ -19,7 +19,7 @@ const SearchCards = () => {
       {/* Content */}
       <div className="flex-1 space-y-2">
         <div className="flex justify-between items-start">
-          <div className="flex items-center gap-2">
+          <div className="w-full flex justify-between items-center gap-2">
             <BestSellerTag name={"Popular"} className="text-xs px-2 py-1" />
             <FoodType type="veg" />
           </div>
