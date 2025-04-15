@@ -17,6 +17,7 @@ const Sidebar = () => {
       <ul className="flex flex-col gap-1 p-2">
         {vendorCategories.map((value, index) => (
           <li
+            key={index}
             className={`p-2 ${
               activeIndex === index
                 ? "opacity-100 bg-[var(--color-primary-500)] text-[var(--color-text-secondary-100)]"

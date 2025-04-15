@@ -8,7 +8,7 @@ const SearchResults = () => {
 
       {/* LIST */}
       <div className="container mx-auto">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-2">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           <SearchCards />
           <SearchCards />
           <SearchCards />

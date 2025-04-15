@@ -89,4 +89,6 @@ const reviews = [
 
 const vendorCategories = ["All", "Category 1", "Category 2", "Category 3", "Category 4", "Category 5", "Category 6", "Category 7", "Category 8"]
 
-export { data, hotelFacilities, reviews, vendorCategories };
+const navbarModalOptions = ["Profile", "Current Order", "History", "Bookmarks", "Wishlist", "Settings"]
+
+export { data, hotelFacilities, reviews, vendorCategories, navbarModalOptions };

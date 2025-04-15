@@ -1,14 +1,17 @@
-"use client"
+"use client";
 import Link from "next/link";
 import Switch from "../switch/Switch";
 import Searchbar from "./Searchbar";
 import NavbarPlace from "./NavbarPlace";
 import NavbarQR from "./NavbarQR";
 import { useEffect, useState } from "react";
+import Modals from "../modals/Modals";
+import NavbarUserOptions from "./NavbarUserOptions";
 
 const Navbar = () => {
   const [isSticky, setIsSticky] = useState(false);
-  
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
+
   useEffect(() => {
     // Only run if window is defined (avoids SSR errors)
     if (typeof window === "undefined") return;
@@ -24,7 +27,7 @@ const Navbar = () => {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  
+
   return (
     <nav className="flex flex-col container mx-auto p-4 gap-2">
       {/* Logo */}
@@ -34,7 +37,6 @@ const Navbar = () => {
             PreOrdr
           </h1>
         </div>
-
         {/* Middle Section */}
         <div className="flex items-center gap-4">
           <div className="hidden md:flex">
@@ -77,32 +79,40 @@ const Navbar = () => {
           </span>
 
           {/* CTA Button */}
-          <Link
-            href="/search"
-            className="px-4 py-2 bg-[var(--color-primary-500)] text-[var(--color-text-primary-50)] rounded-lg hover:bg-[var(--color-primary-600)] transition-colors">
-            Sign In
-          </Link>
+          {isLoggedIn ? (
+            <NavbarUserOptions />
+          ) : (
+            <Link
+              href="/search"
+              className="px-4 py-2 bg-[var(--color-primary-500)] text-[var(--color-text-primary-50)] rounded-lg hover:bg-[var(--color-primary-600)] transition-colors">
+              Sign In
+            </Link>
+          )}
         </div>
 
         {/* Search Bar section for phone - search, cart, scan and others */}
-        <div className="flex md:hidden gap-2">
+        <div className="flex justify-center items-center md:hidden gap-2">
           <NavbarPlace name={"place"} />
 
-          <Link
-            href="/search"
-            className="px-4 py-2 bg-[var(--color-primary-500)] text-[var(--color-text-primary-50)] rounded-lg hover:bg-[var(--color-primary-600)] transition-colors">
-            Sign In
-          </Link>
+          {/* CTA Button */}
+          {isLoggedIn ? (
+            <NavbarUserOptions />
+          ) : (
+            <Link
+              href="/search"
+              className="px-4 py-2 bg-[var(--color-primary-500)] text-[var(--color-text-primary-50)] rounded-lg hover:bg-[var(--color-primary-600)] transition-colors">
+              Sign In
+            </Link>
+          )}
         </div>
       </div>
 
       <div
         className={`flex md:hidden sm:justify-between items-center gap-4 w-full transition-all duration-300 ${
-        isSticky
-          ? "fixed top-0 left-0 bg-white shadow-md z-50 p-4"
-          : "relative bg-transparent"
-      }`}
-      >
+          isSticky
+            ? "fixed top-0 left-0 bg-white shadow-md z-50 p-4"
+            : "relative bg-transparent"
+        }`}>
         <Searchbar className="flex-grow" />
         <NavbarQR />
         <Switch onLabel="Veg" offLabel="Non-Veg" />

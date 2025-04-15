@@ -15,7 +15,6 @@ const page = () => {
         
         <div className="container mx-auto">
           <h1 className="mx-4 font-bold text-2xl">Menu</h1>
-
           {/* Search bar */}
           <MenuSearchPhone />
 

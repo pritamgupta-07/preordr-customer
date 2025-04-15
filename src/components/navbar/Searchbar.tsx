@@ -1,17 +1,17 @@
 import React from "react";
 
-interface searchbarProps {
-  className?: string
+interface SearchbarProps {
+  className?: string,
 }
 
-const Searchbar = ({className = ""}: searchbarProps) => {
+const Searchbar = ({className = "" } :SearchbarProps) => {
   return (
     <div className={`relative max-w-sm ${className}`}>
       <div className="flex items-center border border-gray-300 rounded-lg bg-[var(--color-surface-100)] focus-within:ring-2 focus-within:ring-[var(--color-primary-500)] focus-within:border-[var(--color-primary-300)] transition-all">
         <input
           type="text"
           placeholder="Search..."
-          className="w-full px-4 py-2 text-sm bg-transparent text-[var(--color-text-primary-500)] focus:outline-none placeholder:text-gray-400"
+          className={`w-full px-4 py-2 text-sm bg-transparent text-[var(--color-text-primary-500)] focus:outline-none placeholder:text-gray-400`}
           aria-label="Search"
         />
         <button
